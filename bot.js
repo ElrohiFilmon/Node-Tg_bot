@@ -1,6 +1,9 @@
-const { Telegraf } = require('telegraf');
+import { Telegraf } from 'telegraf';
+import dotenv from 'dotenv';
 
-const bot = new Telegraf('YOUR_BOT_TOKEN');
+dotenv.config(); // Load environment variables from .env
+
+const bot = new Telegraf(process.env.API_KEY); // Access API key from environment variable
 
 bot.start((ctx) => ctx.reply('Hi there! 👋  How can I help you today?'));
 
